@@ -4,11 +4,14 @@ In this example we will create simple modules from scratch (f.ex. CommonJS and A
 
 ## Setup and usage
 
+```bash
+npm install
+```
+
 - All javascript modules are located in folder `js/modules`.
 - For simplicity, we'll use the npm package `http-server` to run the site:
 Install `http-server`:
 ```bash
-npm install
 npm install -g http-server
 ```
 
