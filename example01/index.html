@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 01</title>
+
+</head>
+
+<body>
+  Hi to Exercise 01
+
+  <script src="node_modules/systemjs/dist/system.js"></script>
+  <script>
+    console.debug("Page Loaded and Script Running");
+
+    /* SystemJS Configs */
+    SystemJS.config({
+      baseURL: './js/modules',
+      meta: {
+        './moduleAMD.js': { format: 'amd' },
+        './moduleCommonJS.js': { format: 'cjs' }
+      }
+    });
+
+    /* Self reveiling module
+      This seems to work: 
+      */
+    SystemJS.import('dummyModule.js')
+      .then(function () {
+        dummyModule.update(); // module "dummy"
+      });
+
+    /* Common JS
+      Uncaught (in promise) ReferenceError: moduleCommonJS is not defined
+     */
+    SystemJS.import('moduleCommonJS.js')
+      .then(function () {
+        moduleCommonJS.updateCJS();
+      })
+
+    /* AMD 
+      Error: (SystemJS) define is not a function 
+      */
+    SystemJS.import('moduleAMD.js')
+      .then(function (moduleAMD) {
+        moduleAMD.upateAMD(); // module "dummyAMD"
+      });
+  </script>
+</body>
+
+</html>
