@@ -8,6 +8,7 @@ In this example we will create simple modules from scratch (f.ex. CommonJS and A
 - For simplicity, we'll use the npm package `http-server` to run the site:
 Install `http-server`:
 ```bash
+npm install
 npm install -g http-server
 ```
 
