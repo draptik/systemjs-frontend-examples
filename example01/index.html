@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Exercise 01</title>
-
 </head>
 
 <body>
-  Hi to Exercise 01
+  <h1>Hi to Exercise 01</h1>
+  <p>Open the JS console...</p>
 
   <script src="node_modules/systemjs/dist/system.js"></script>
   <script>
@@ -16,36 +16,40 @@
 
     /* SystemJS Configs */
     SystemJS.config({
-      baseURL: './js/modules',
-      meta: {
-        './moduleAMD.js': { format: 'amd' },
-        './moduleCommonJS.js': { format: 'cjs' }
-      }
+      baseURL: './js/modules'
+      // meta: {
+      //   './foo.js': { format: 'amd' },
+      //   './amdtest.js': { format: 'amd' },
+      //   './moduleCommonJS.js': { format: 'cjs' }
+      // }
     });
 
-    /* Self reveiling module
-      This seems to work: 
-      */
+    /* Self reveiling module */
     SystemJS.import('dummyModule.js')
       .then(function () {
-        dummyModule.update(); // module "dummy"
+        dummyModule.update();
       });
 
-    /* Common JS
-      Uncaught (in promise) ReferenceError: moduleCommonJS is not defined
-     */
+    /* Common JS */
     SystemJS.import('moduleCommonJS.js')
-      .then(function () {
-        moduleCommonJS.updateCJS();
+      .then(function (m) {
+        m.updateCJS();
       })
 
-    /* AMD 
-      Error: (SystemJS) define is not a function 
-      */
-    SystemJS.import('moduleAMD.js')
-      .then(function (moduleAMD) {
-        moduleAMD.upateAMD(); // module "dummyAMD"
-      });
+    /* AMD Example 1 */
+    SystemJS.import('foo.js').then(function (foo) {
+      console.log(foo);
+      foo.updateAMD();
+    });
+
+    /* AMD Example 2 */
+    System.import('amdtest.js').then(function (amdtest) {
+      console.log(amdtest);
+      amdtest.updateAMD();
+    }).catch(function (error) {
+      alert(error);
+    });
+
   </script>
 </body>
 

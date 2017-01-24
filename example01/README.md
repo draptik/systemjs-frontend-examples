@@ -17,7 +17,7 @@ npm install -g http-server
 
 Run `http-server` from the command line and visit [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
-## Unsolved problems
+## Notes
 
-- What is the difference between `System.import` and `SystemJS.import`? Are they aliases?
-- What is wrong with our module imports for CommonJS and AMD?
+- What is the difference between `System.import` and `SystemJS.import`? Are they aliases? Answer: Yes they are aliases ([link](https://github.com/systemjs/systemjs/issues/1547#issuecomment-274718695))
+
