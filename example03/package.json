@@ -1,18 +1,23 @@
 {
-  "name": "example01",
+  "name": "example03",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Patrick Drechsler",
+  "license": "MIT",
   "dependencies": {
-    "systemjs": "^0.19.43"
+    "systemjs": "^0.20.0"
   },
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "del": "2.2.2",
+    "gulp": "3.9.1",
+    "gulp-livereload": "3.8.1",
+    "http-server": "^0.9.0",
+    "systemjs-builder": "0.16.0",
+    "util": "0.10.3"
   }
 }
