@@ -1,3 +1,3 @@
-SystemJS.config({
+System.config({
   baseURL: './js/modules'
 });
