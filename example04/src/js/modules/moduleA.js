@@ -1,21 +1,12 @@
 /**
- * This is a CommonJS module.
+ * This is an ES6 module.
  */
 
-/* load dependency */
-var moduleB = require('./moduleB.js');
+import * as b from './moduleB.js';
 
-/* Alternative syntax for loading dependencies. This syntax requires a transpiler */
-// import * as a from './a.js'
-
-/* the function being exported */
-var update = function () {
-  moduleB.magic();
+export function update(){
+  b.magic();
   console.log('Hi from module A.');
-};
+}
 
-/* export definition */
-exports.updateCJS = update;
-
-/* Another export definition */
-exports.blub = function () { console.log('blub') };
+export function blub () { console.log('blub') };

@@ -1,9 +1,6 @@
 /**
- * This is a CommonJS module.
+ * This is an ES6 module.
  */
-
-var showStuff = function () {
-  console.log('Hi from module C.');
+export function show () {
+  console.log('Hi from module C. I\'m an ES6 module.');
 };
-
-exports.show = showStuff;

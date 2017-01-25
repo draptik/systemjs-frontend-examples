@@ -2,7 +2,8 @@ var gulp = require("gulp"),
   util = require("gulp-util"),
   del = require("del"),
   path = require("path"),
-  Builder = require('systemjs-builder');
+  Builder = require('systemjs-builder'),
+  babel = require('gulp-babel');
 
 var dest = "dist";
 
@@ -28,6 +29,10 @@ function copyHtml() {
 
 function copyJs() {
   gulp.src('src/js/*.js')
+    .pipe(babel({
+      presets: ['es2015'],
+      // "plugins": ["transform-es2015-modules-systemjs"]
+    }))
     .pipe(gulp.dest(dest + '/js'));
 }
 
