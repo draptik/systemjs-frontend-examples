@@ -1,9 +1,7 @@
 /**
- * This is a CommonJS module.
+ * This is an ES6 module.
  */
 
-var doMagic = function () {
+export function magic () {
   console.log('Hi from module B.');
 };
-
-exports.magic = doMagic;
