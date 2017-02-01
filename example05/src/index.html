@@ -13,8 +13,11 @@
 
   <script src="js/vendor/system.js"></script>
   <script src="js/config.js"></script>
-  <script src="js/modules/indexBundle.js"></script>
-  <script src="js/index.js"></script>
+  <script>
+    // Note: 'index2.js' is the module name as defined in gulpfile.
+    // This way we can use the bundle for production and the unbundled version for development.
+    System.import('index2.js');
+  </script>
 </body>
 
 </html>
